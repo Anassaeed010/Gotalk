@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExcplorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -26,5 +27,6 @@ Route::get('/tweet/{tweet}', [TweetController::class, 'view'])
     ->name('tweet.view');
 Route::post('/tweet/create', [TweetController::class, 'store'])
     ->name('tweet.create'); 
-
+Route::get('/explore', [ExcplorController::class, 'create'])
+    ->name('explore');  
      

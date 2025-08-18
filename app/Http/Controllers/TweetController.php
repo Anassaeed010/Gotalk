@@ -28,12 +28,17 @@ class TweetController extends Controller
     function store(StoreTweetRequest $request)
     {
         $tweet = Auth::user()->tweets()->create($request->validated());
-        if ($tweet->parentTweet()->exists()) {
-            $tweet->baseTweet()->associate($tweet->parentTweet->baseTweet->id)->save();
+
+        // إذا فيه parent_tweet_id
+        if ($request->filled('parent_tweet_id')) {
+            $parentTweet = Tweet::find($request->parent_tweet_id);
+            $tweet->parentTweet()->associate($parentTweet);
+            $tweet->baseTweet()->associate($parentTweet->baseTweet ?? $parentTweet);
         } else {
-            $tweet->baseTweet()->associate($tweet)->save();
+            $tweet->baseTweet()->associate($tweet);
         }
 
+        $tweet->save();
         return redirect()->back();
     }
 }

@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->id();
             $table->timestamps();
             $table->foreignId('email_id') ->unique()
-                ->nullable()->constrained('users')
+                 ->nullable()->constrained('users')  
                 ->cascadeOnDelete();
 
             $table->foreignId('followee_id')
