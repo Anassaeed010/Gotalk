@@ -29,14 +29,15 @@ class TweetController extends Controller
     {
         $tweet = Auth::user()->tweets()->create($request->validated());
 
-        // إذا فيه parent_tweet_id
-        if ($request->filled('parent_tweet_id')) {
-            $parentTweet = Tweet::find($request->parent_tweet_id);
-            $tweet->parentTweet()->associate($parentTweet);
-            $tweet->baseTweet()->associate($parentTweet->baseTweet ?? $parentTweet);
-        } else {
-            $tweet->baseTweet()->associate($tweet);
-        }
+       if ($request->filled('parent_tweet_id')) {
+    $parentTweet = Tweet::find($request->parent_tweet_id);
+    $tweet->parentTweet()->associate($parentTweet);
+    $tweet->baseTweet()->associate($parentTweet->baseTweet ?? $parentTweet);
+} else {
+    $tweet->baseTweet()->associate($tweet);
+}
+$tweet->save();
+
 
         $tweet->save();
         return redirect()->back();

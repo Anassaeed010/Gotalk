@@ -137,14 +137,15 @@
       <!-- الكارد الأول: Dexter -->
       <div class="content-card bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg border border-white/10 group transition hover:scale-105 hover:shadow-purple-500/20">
         <div class="overflow-hidden h-48">
-          <img src="https://comicbook.com/wp-content/uploads/sites/4/2025/04/Dexter-Resurrection-Michael-C-Hall.jpg"
+          <img src="https://media.gemini.media/img/yallakora/Normal//2025/8/19/535924499-18523018003018981-6092525723598259884-n2025_8_19_19_18.webp"
                alt="Dexter New Blood"
                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
         </div>
         <div class="p-5 space-y-3">
-          <h2 class="text-xl font-bold">عودة مسلسل Dexter 🔪</h2>
+          <h2 class="text-xl font-bold"> العالمي الى النهائي💛</h2>
           <p class="text-sm text-gray-300">
-            بعد موسم New Blood، تعود شخصية Dexter في **Resurrection** بمغامرات مشوقة لعشاق الغموض والإثارة.
+       النصر اليوم أشعل الملعب بقوة لا تُقهر، قاتل بعشرة رجال وكأنه بعشرين.
+ورونالدو أطلق سحره بتمريرة أسطورية، جسدت معنى القائد العالمي الذي لا يعرف المستحيل.
           </p>
           <button class="mt-3 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition">
             اقرأ المزيد →
@@ -207,14 +208,14 @@
       </div>
 
       <!-- الكارد الخامس والسادس: محتوى اجتماعي وثقافي تجريبي -->
-      @foreach (range(5,6) as $i)
+      @foreach (range(3,3) as $i)
         <div class="content-card bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg border border-white/10 group transition hover:scale-105 hover:shadow-purple-500/20">
           <div class="overflow-hidden h-48">
             <img src="https://th.bing.com/th?id=OIF.krZ9Y6bZ9eAkHdDe%2bovuDA&w=271&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3={{ $i }}" alt="demo"
                  class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
           </div>
           <div class="p-5 space-y-3">
-            <h2 class="text-xl font-bold">عنوان محتوى {{ $i }}</h2>
+            <h2 class="text-xl font-bold" >  ثمانية    {{ $i }}</h2>
             <p class="text-sm text-gray-300">
              13 أغسطس 2025
 أعلنت شركة ثمانية عن إطلاق تطبيقها الجديد في 13 أغسطس 2025، والذي سيتيح بث جميع مباريات الدوري السعودي (دوري روشن) وكأس الملك ودوري يلو مجانًا. التطبيق سيتوفر على أنظمة iOS وAndroid وApple TV وAndroid TV، بالإضافة إلى الشاشات الذكية من سامسونج وإل جي. كما ستوفر ثمانية باقات اشتراك تبدأ من 58 ريالًا شهريًا، تشمل جودة أعلى وبرامج تحليلية وإحصائيات معلوماتية</p>
