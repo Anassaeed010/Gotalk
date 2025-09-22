@@ -10,8 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-
-        Schema::create('follows', function (Blueprint $table) {
+        Schema::create('following', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignId('follower_id')->constrained('users')->onDelete('cascade');
@@ -19,6 +18,7 @@ return new class extends Migration {
 
             // ensure that each user can follow another user only once
             $table->unique(['follower_id', 'followee_id']);
+
 
         });
     }
@@ -28,7 +28,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-Schema::dropIfExists('follows');
-
+        Schema::dropIfExists('following');
     }
 };

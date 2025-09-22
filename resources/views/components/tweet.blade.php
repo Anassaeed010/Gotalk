@@ -1,13 +1,13 @@
-@props(['tweet'])
-
-
-
-
+@props(['tweet' ,
+'userId '])
 <div class="card bg-gray-900 rounded-2xl shadow-lg overflow-hidden w-full max-w-xl mx-auto mb-2">
-<div>
-    <button class="btn btn-gradient btn-primary rounded-full">اضافه</button>
+    <!-- زر الإضافة -->
+    <div>
+ <a href="{{ route('user.followers', $userId) }}"> 
+        <button class="btn btn-gradient btn-primary rounded-full">اضافه</button>
 
-</div>
+    </div>            
+    </a>
     <!-- محتوى التغريدة -->
     <div class="card-body py-4 px-6">
         <p class="text-white">{{ $tweet->content }}</p>
@@ -15,10 +15,8 @@
 
     <!-- زر الرد وبيانات المستخدم -->
     <div class="card-actions p-4 pt-0 flex justify-between items-center">
-        <a 
-            href="{{ route('tweet.view', $tweet->id) }}" 
-            class="flex items-center gap-1 btn btn-xs bg-white text-black hover:bg-gray-200 px-2 py-1 rounded"
-        >
+        <a href="{{ route('tweet.view', $tweet->id) }}"
+            class="flex items-center gap-1 btn btn-xs bg-white text-black hover:bg-gray-200 px-2 py-1 rounded">
             <span class="icon-[tabler--message] size-4"></span>
             <span class="text-sm font-semibold">رد</span>
         </a>
@@ -40,7 +38,8 @@
             @foreach ($tweet->childTweets as $childTweet)
                 <div class="flex flex-col gap-1">
                     <!-- اسم صاحب الرد داخل كارد الرد -->
-                    <div class="text-gray-400 text-sm ml-2">رد بواسطة: <span class="font-semibold text-white">{{ $childTweet->user->name }}</span></div>
+                    <div class="text-gray-400 text-sm ml-2">رد بواسطة: <span
+                            class="font-semibold text-white">{{ $childTweet->user->name }}</span></div>
                     <x-tweet :tweet="$childTweet" />
                 </div>
             @endforeach

@@ -27,5 +27,5 @@ Route::get('/tweet/{tweet}', [TweetController::class, 'view'])->name('tweet.view
 Route::post('/tweet/create', [TweetController::class, 'store'])->name('tweet.create');
 Route::get('/explore', [ExcplorController::class, 'create'])->name('explore');
 //follwimg and unfollowing routes
-Route::get('users/{userId}/followers', [UserRelationshipController::class, 'followers'] ) ->name('user.followers');
-Route::get('users/{userId}/followees', [UserRelationshipController::class, 'followees']) ->name('user.followees');
+Route::get('users/{userId}/followers', [UserRelationshipController::class, 'followers'])->name('user.followers');
+Route::get('users/{userId}/followees', [UserRelationshipController::class, 'followees'])->name('user.followees');
