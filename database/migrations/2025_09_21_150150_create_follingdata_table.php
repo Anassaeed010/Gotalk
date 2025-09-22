@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Tweets;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,21 +13,13 @@ return new class extends Migration {
         Schema::create('follows', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('email_id') ->unique()
-                 ->nullable()->constrained('users')  
-                ->cascadeOnDelete();
+            $table->foreignId('follower_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('followee_id')->constrained('users')->onDelete('cascade');
 
-            $table->foreignId('followee_id')
-               ->nullable()
-             ->constrained('users')
-                ->nullable()
-                ->cascadeOnDelete();
-               
-     
-            
-          
-         
-                });
+            // ensure that each user can follow another user only once
+            $table->unique(['follower_id', 'followee_id']);
+
+        });
     }
 
     /**

@@ -96,7 +96,7 @@
 </script>
 
   <!-- خلفية زجاجية عصرية -->
-  <div class="min-h-screen bg-gradient-to-br from-slate-900 via-black to-slate-800 text-white relative overflow-hidden">
+  <div class="sidebarMenu">
 
     <!-- العنوان الرئيسي -->
     <div class="flex justify-center py-12">

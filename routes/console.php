@@ -1,6 +1,5 @@
-         
-   <?php      
-         
+<?php
+
 use App\Models\Tweet;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
