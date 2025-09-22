@@ -1,7 +1,13 @@
 @props(['tweet'])
 
-<div class="card bg-gray-900 rounded-2xl shadow-lg overflow-hidden w-full max-w-xl mx-auto mb-2">
 
+
+
+<div class="card bg-gray-900 rounded-2xl shadow-lg overflow-hidden w-full max-w-xl mx-auto mb-2">
+<div>
+    <button class="btn btn-gradient btn-primary rounded-full">اضافه</button>
+
+</div>
     <!-- محتوى التغريدة -->
     <div class="card-body py-4 px-6">
         <p class="text-white">{{ $tweet->content }}</p>
